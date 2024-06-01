@@ -4,7 +4,11 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\MealController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+
+
 
 Route::get('/restaurant', function () {
     return view('restaurant.show');
@@ -22,6 +26,11 @@ Route::controller(RestaurantController::class)->group(function () {
     Route::get('/restaurant/{restaurant}/destroy/', 'destroy')->name('restaurant.destroy');
     Route::get('/create', 'create')->name('restaurant.create');
     Route::post('/store', 'store')->name('restaurant.store');
+});
+
+Route::get('/test', function () {
+    $users = User::all();
+    return response()->json($users);
 });
 
 Route::resource('meal', MealController::class);

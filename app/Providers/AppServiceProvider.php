@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Restaurant;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Support\Facades\Gate;
@@ -9,6 +10,7 @@ use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */

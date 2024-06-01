@@ -10,17 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
-
     <title>FoodSearch</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <script defer src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{asset('css/album.css')}}">
 </head>
 
 <body>
@@ -70,25 +64,29 @@
             <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
             <div class="mt-3 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Nazwa</label>
-                <input id="name" name="name" type="text" class="form-control @if ($errors->first('name')) is-invalid @endif" value="{{ old('name') }}" 
+                <input id="name" name="name" type="text" class="form-control @if ($errors->first('name')) is-invalid @endif"
+                 value="{{ old('name') }}" 
                     placeholder="Nazwa">
                 <div class="invalid-feedback">Nieprawidłowa nazwa!</div>
             </div>
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Kategoria</label>
-                <input id="category" name="category" type="text" class="form-control @if ($errors->first('category')) is-invalid @endif" value="{{ old('category') }}" 
+                <input id="category" name="category" type="text" class="form-control @if ($errors->first('category')) is-invalid @endif"
+                 value="{{ old('category') }}" 
                     placeholder="Kategoria">
                 <div class="invalid-feedback">Nieprawidłowa kategoria!</div>
             </div>
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Cena</label>
-                <input id="price" name="price" type="number" class="form-control @if ($errors->first('price')) is-invalid @endif" value="{{ old('price') }}" 
+                <input id="price" name="price" type="number" class="form-control @if ($errors->first('price')) is-invalid @endif"
+                 value="{{ old('price') }}" 
                     placeholder="Cena">
                 <div class="invalid-feedback">Nieprawidłowa cena!</div>
             </div>  
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Sciezka obrazu</label>
-                <input id="img" name="img" type="text" class="form-control @if ($errors->first('img')) is-invalid @endif" value="{{ old('img') }}" 
+                <input id="img" name="img" type="text" class="form-control @if ($errors->first('img')) is-invalid @endif"
+                 value="{{ old('img') }}" 
                     placeholder="Sciezka">
                 <div class="invalid-feedback">Nieprawidłowa ścieżka!</div>
             </div>      

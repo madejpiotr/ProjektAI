@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\User;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use Illuminate\Support\Facades\Gate;
@@ -45,7 +46,10 @@ class RestaurantController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+    {   
+        if(!Gate::allows('create', Restaurant::class)) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('restaurant.create');
     }
     public function show(Restaurant $restaurant)
@@ -88,7 +92,10 @@ class RestaurantController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Restaurant $restaurant)
-    {
+    {   
+        if(!Gate::allows('update', Restaurant::class)) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('restaurant.edit', ['restaurant' => $restaurant]);
     }
 
@@ -100,7 +107,9 @@ class RestaurantController extends Controller
         // if ($request->user()->cannot('update', $restaurant)) {
         //     abort(403);
         // }
-
+        if(!Gate::allows('update', Restaurant::class)) {
+            abort(403, 'Unauthorized action.');
+        }
         $input = $request->all();
         $restaurant->update($input);
         return redirect()->route('foodsearch');
@@ -111,6 +120,9 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        if(!Gate::allows('delete', $restaurant)) {
+            abort(403, 'Unauthorized action.');
+        }
         $menus = Menu::where("restaurant_id", $restaurant->id)->get();
         $result = collect([]);
         Menu::where("restaurant_id", $restaurant->id)->delete();

@@ -10,17 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
-
     <title>FoodSearch</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <script defer src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{asset('css/album.css')}}">
 </head>
 
 <body>
@@ -70,25 +64,29 @@
             @method('PUT')
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Nazwa</label>
-                <input id="name" name="name" type="text" class="form-control @if ($errors->first('name')) is-invalid @endif" value="{{ $meal->name }}" id="exampleFormControlInput1"
+                <input id="name" name="name" type="text" class="form-control @if ($errors->first('name')) is-invalid @endif"
+                 value="{{ $meal->name }}" id="exampleFormControlInput1"
                     placeholder="Nazwa">
                 <div class="invalid-feedback">Nieprawidłowa nazwa!</div>
             </div>
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Cena</label>
-                <input id="price" name="price" type="number" class="form-control @if ($errors->first('price')) is-invalid @endif" value="{{ $meal->price }}" id="exampleFormControlInput1"
+                <input id="price" name="price" type="number" class="form-control @if ($errors->first('price')) is-invalid @endif"
+                 value="{{ $meal->price }}" id="exampleFormControlInput1"
                     placeholder="Cena">
                 <div class="invalid-feedback">Nieprawidłowa cena!</div>
             </div>
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Kategoria</label>
-                <input id="category" name="category" type="text" class="form-control @if ($errors->first('category')) is-invalid @endif" value="{{ $meal->category }}" id="exampleFormControlInput1"
+                <input id="category" name="category" type="text" class="form-control @if ($errors->first('category')) is-invalid @endif"
+                 value="{{ $meal->category }}" id="exampleFormControlInput1"
                     placeholder="Kategoria">
                 <div class="invalid-feedback">Nieprawidłowa kategoria!</div>
             </div>  
             <div class="mt-2 mb-3 mr-5 ml-5">
                 <label for="exampleFormControlInput1">Sciezka obrazu</label>
-                <input id="img" name="img" type="text" class="form-control @if ($errors->first('img')) is-invalid @endif" value="{{ $meal->img }}" id="exampleFormControlInput1"
+                <input id="img" name="img" type="text" class="form-control @if ($errors->first('img')) is-invalid @endif"
+                 value="{{ $meal->img }}" id="exampleFormControlInput1"
                     placeholder="Sciezka">
                 <div class="invalid-feedback">Nieprawidłowa ścieżka!</div>
             </div>      
@@ -100,27 +98,6 @@
 
     </main>
 
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{asset('js/jquery-3.2.1.slim.min.js.js')}}"></script>
-    <script>
-    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/holder.min.js')}}"></script>
-
-    <script src="public/js/app.js" type="text/javascript"></script><svg xmlns="http://www.w3.org/2000/svg" width="348"
-        height="225" viewBox="0 0 348 225" preserveAspectRatio="none"
-        style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
-        <defs>
-            <style type="text/css"></style>
-        </defs><text x="0" y="17"
-            style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text>
-    </svg>
 </body>
 
 </html>
